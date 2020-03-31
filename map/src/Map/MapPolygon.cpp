@@ -1,4 +1,4 @@
-#include "Geometry/MapPolygon.h"
+#include "MapPolygon.h"
 
 MapPolygon::MapPolygon() : Polygon(), borderWidth{ 0 } {}
 

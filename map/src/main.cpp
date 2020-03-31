@@ -7,7 +7,7 @@
 * \version 1.11
 */
 
-#include "Geometry/Geometry.h"
+#include "Map/Map.h"
 #include <iostream>
 
 int main() {

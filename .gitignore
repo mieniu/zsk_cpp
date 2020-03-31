@@ -32,6 +32,6 @@
 *.app
 
 #directories
-Debug
-x64
-.vs
+Debug/
+x64/
+.vs/

@@ -7,7 +7,7 @@
 * \version 1.11
 */
 
-#include "Geometry/Matrix.h"
+#include "Matrix.h"
 #include <iostream>
 #include <exception>
 

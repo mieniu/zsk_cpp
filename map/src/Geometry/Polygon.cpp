@@ -7,7 +7,7 @@
 * \version 1.11
 */
 
-#include "Geometry/Polygon.h"
+#include "Polygon.h"
 #include <cmath>
 #include <exception>
 

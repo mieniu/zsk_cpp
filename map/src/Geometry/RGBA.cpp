@@ -1,4 +1,4 @@
-#include "Geometry/RGBA.h"
+#include "RGBA.h"
 
 RGBA::RGBA(unsigned char& _r, unsigned char& _g,  unsigned char& _b, unsigned char _a = 255) : 
 	red{ _r }, 

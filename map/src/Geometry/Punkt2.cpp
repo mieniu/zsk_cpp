@@ -7,7 +7,7 @@
 * \version 1.11
 */
 
-#include "Geometry/Punkt2.h"
+#include "Punkt2.h"
 #include <cmath>
 #include <iostream>
 
