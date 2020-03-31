@@ -11,7 +11,7 @@ class RGBA
 	uchar alpha;
 	friend std::ostream& operator<<(std::ostream& os, const RGBA& rgba);
 public:
-	RGBA() = delete;
+	RGBA();
 	RGBA(uchar& _r, uchar& _g, uchar& _b, uchar _a);
 	RGBA(const RGBA& other);
 	RGBA(RGBA&& other);

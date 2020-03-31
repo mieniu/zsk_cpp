@@ -13,39 +13,29 @@
 class Polyline
 {
 private:
-	static unsigned int how_many; /*!< Licznik*/
-	friend std::ostream& operator<<(std::ostream& os, const Polygon& p);
-protected:
-	unsigned int count = 0; /*!< Liczba wierzcho³ków wielok¹ta */
-
+	static unsigned int instancesCounter; /*!< Licznik*/
+	unsigned int v_count = 0; /*!< Liczba wierzcho³ków wielok¹ta */
 	Punkt2* vertices; /*!< Tablica wierzocho³ków */
+	friend std::ostream& operator<<(std::ostream& os, const Polyline& p);
 
-	/*!
-	 * \brief Metoda licz¹ca pole trójk¹ta o trzech podanych punktach
-	 * \param p1 Punkt 1
-	 * \param p2 Punkt 2
-	 * \param p3 Punkt 3
-	 * \return Pole trójk¹ta
-	 * \sa getTriangleArea()
-	 */
-	double getTriangleArea(Punkt2 p1, Punkt2 p2, Punkt2 p3);
 public:
 	/*!
 	 * \brief Konstruktor domyœlny
-	 * \sa Polygon()
+	 * \sa Polyline()
 	 */
 	Polyline();
 
 	/*!
 	 * \brief Konstruktor z punktem
 	 * \param vertex WskaŸnik obiektów Punkt2 zawieraj¹cy wierzcho³ki
-	 * \sa Polygon()
+	 * \param len D³ugoœæ tablicy
+	 * \sa Polyline()
 	 */
 	Polyline(Punkt2* vertex, const unsigned int len);
 
 	/*!
 	 * \brief Konstruktor kopiuj¹cy
-	 * \param _poly Obiekt typu Polygon
+	 * \param _poly Obiekt typu Polyline
 	 */
 	Polyline(const Polyline& _poly);
 
@@ -56,34 +46,34 @@ public:
 	Polyline(std::initializer_list<Punkt2> list);
 
 	/*!
-	 * \brief Destruktor klasy Polygon
-	 * \sa ~Polygon()
+	 * \brief Destruktor klasy Polyline
+	 * \sa ~Polyline()
 	 */
 	~Polyline();
 
 	/*!
 	 * \brief Metoda konstruuj¹ca tablicê wierzcho³ków
 	 * \param _vertices  argument typu Punkt*  przekazuj¹cy tablicê wierzcho³ków wielok¹ta
-	 * \param _count argument typu  unsigned int przekazuj¹cy iloœæ wierzcho³ków.
-	 * \sa changeVertex()
+	 * \param _v_count argument typu  unsigned int przekazuj¹cy iloœæ wierzcho³ków.
+	 * \sa setVertices()
 	 */
-	void setVertices(Punkt2* _vertices, unsigned int _count);
+	void setVertices(Punkt2* _vertices, unsigned int _v_count);
 
 	/*!
 	 * \brief Metoda zmieniaj¹ca wspólrzêdne i-tego wierzcho³ka.
 	 * \param i argument typu int  przekazuj¹cy numer wiercho³ka do zmiany
 	 * \param x argument typu double przekazuj¹cy now¹ wartoœæ do wspó³rzêdnej x.
 	 * \param y argument typu double przekazuj¹cy now¹ wartoœæ do wspó³rzêdnej y.
-	 * \sa setVertices()
+	 * \sa changeVertex()
 	 */
 	void changeVertex(unsigned int i, double x, double y);
 
 	/*!
 	 * \brief Metoda zwracaj¹ca liczbê wierzcho³ków.
 	 * \return Liczba wierzcho³ków
-	 * \sa getCount()
+	 * \sa getVerticesCount()
 	 */
-	double getCount();
+	unsigned int getVerticesCount();
 
 	/*!
 	 * \brief Metoda obliczaj¹ca obwód wielok¹ta
@@ -97,9 +87,9 @@ public:
 	 * \return Stan licznika
 	 * \sa getCounter()
 	 */
-	static double getCounter();
+	static double getInstancesCounter();
 
-	Polyline operator=(const Polyline& polygon);
+	Polyline operator=(const Polyline& Polyline);
 	Polyline& operator=(Polyline&& _p);
 	Punkt2 operator[](unsigned int i) const;
 };

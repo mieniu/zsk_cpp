@@ -1,6 +1,7 @@
 #pragma once
 #include "../Geometry/Punkt2.h"
 #include "../Geometry/RGBA.h"
+#include <initializer_list>
 
 class MapPoint :
 	public Punkt2
@@ -12,6 +13,8 @@ protected:
 public:
 	MapPoint() = delete;
 	MapPoint(Punkt2& p, const unsigned int visRadius, RGBA visColor);
+	MapPoint(std::initializer_list<double> point, unsigned int visRadius, RGBA visColor);
+	~MapPoint();
 	void setVisRadius(unsigned int newRadius);
 	void setVisColor(RGBA& newColor);
 	const unsigned int getVisRadius();

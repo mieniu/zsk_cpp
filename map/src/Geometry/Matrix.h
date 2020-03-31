@@ -1,7 +1,7 @@
 /*! \file Matrix.h
 *
 * \brief Zawiera deklaracjê klasy Matrix
-* Wykorzystuje klasê "Punkt2.h"
+* Wykorzystuje klasê "Punkt2"
 *
 * \author Szymon Siemieniuk
 * \date 2020.03.27

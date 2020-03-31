@@ -13,7 +13,8 @@
 int main() {
 	setlocale(LC_ALL,"");
 
-	MapPolygon p{ {{2.0,-1},{3,-2},{1,1}}, {{250,0,0}}, 2 };
+	MapPolygon p{ {{2.0,-1},{3,-2},{5.25,1}}, {{250,0,0}}, "Coœ", 2 };
+	std::cout << p;
 
 	return 0;
 }

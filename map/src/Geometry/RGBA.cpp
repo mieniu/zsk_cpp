@@ -1,5 +1,12 @@
 #include "RGBA.h"
 
+RGBA::RGBA() :
+	red{ 0 },
+	green{ 0 },
+	blue{ 0 },
+	alpha{ 255 } {}
+
+
 RGBA::RGBA(unsigned char& _r, unsigned char& _g,  unsigned char& _b, unsigned char _a = 255) : 
 	red{ _r }, 
 	green{ _g }, 

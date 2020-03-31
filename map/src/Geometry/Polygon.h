@@ -1,6 +1,5 @@
 /*! \file Polygon.h
-*
-* \brief Zawiera deklaracjê klasy Polygon.h
+* \brief Zawiera deklaracjê klasy Polygon
 * Dziedziczy po Polyline
 *
 * \author Szymon Siemieniuk
@@ -8,19 +7,18 @@
 * \version 1.11
 */
 #pragma once
-#include "Polyline.h"
+#include "Punkt2.h"
 #include <vector>
 
-class Polygon : public Polyline
+class Polygon
 {
 private:
-	static unsigned int how_many; /*!< Licznik*/
+	static unsigned int instancesCounter; /*!< Licznik*/
 	friend std::ostream& operator<<(std::ostream& os, const Polygon& p);
+
 protected:
-	unsigned int count=0; /*!< Liczba wierzcho³ków wielok¹ta */
-
+	unsigned int v_count = 0; /*!< Liczba wierzcho³ków wielok¹ta */
 	Punkt2* vertices; /*!< Tablica wierzocho³ków */
-
 	/*!
 	 * \brief Metoda licz¹ca pole trójk¹ta o trzech podanych punktach
 	 * \param p1 Punkt 1
@@ -30,6 +28,7 @@ protected:
 	 * \sa getTriangleArea()
 	 */
 	double getTriangleArea(Punkt2 p1, Punkt2 p2, Punkt2 p3);
+
 public:
 	/*!
 	 * \brief Konstruktor domyœlny
@@ -65,26 +64,26 @@ public:
 	/*!
 	 * \brief Metoda konstruuj¹ca tablicê wierzcho³ków
 	 * \param _vertices  argument typu Punkt*  przekazuj¹cy tablicê wierzcho³ków wielok¹ta
-	 * \param _count argument typu  unsigned int przekazuj¹cy iloœæ wierzcho³ków.
-	 * \sa changeVertex()
+	 * \param _v_count argument typu  unsigned int przekazuj¹cy iloœæ wierzcho³ków.
+	 * \sa setVertices()
 	 */
-	void setVertices(Punkt2 * _vertices, unsigned int _count);
+	void setVertices(Punkt2* _vertices, unsigned int _v_count);
 
 	/*!
 	 * \brief Metoda zmieniaj¹ca wspólrzêdne i-tego wierzcho³ka.
 	 * \param i argument typu int  przekazuj¹cy numer wiercho³ka do zmiany
 	 * \param x argument typu double przekazuj¹cy now¹ wartoœæ do wspó³rzêdnej x.
 	 * \param y argument typu double przekazuj¹cy now¹ wartoœæ do wspó³rzêdnej y.
-	 * \sa setVertices()
+	 * \sa changeVertex()
 	 */
 	void changeVertex(unsigned int i, double x, double y);
 
 	/*!
 	 * \brief Metoda zwracaj¹ca liczbê wierzcho³ków.
 	 * \return Liczba wierzcho³ków
-	 * \sa getCount()
+	 * \sa getVerticesCount()
 	 */
-	double getCount();
+	unsigned int getVerticesCount();
 
 	/*!
 	 * \brief Metoda obliczaj¹ca obwód wielok¹ta
@@ -110,9 +109,9 @@ public:
 	/*!
 	 * \brief Metoda zwracaj¹ca stan licznika. Nie wywo³ujemy jej na obiekcie
 	 * \return Stan licznika
-	 * \sa getCounter()
+	 * \sa getInstancesCounter()
 	 */
-	static double getCounter();
+	unsigned int getInstancesCounter();
 
 	Polygon operator=(const Polygon& polygon);
 	Polygon& operator=(Polygon&& _p);
