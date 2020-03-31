@@ -139,18 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\MapPoint.cpp" />
-    <ClCompile Include="src\MapPolygon.cpp" />
-    <ClCompile Include="src\Matrix.cpp" />
-    <ClCompile Include="src\Polygon.cpp" />
-    <ClCompile Include="src\Polyline.cpp" />
-    <ClCompile Include="src\Punkt2.cpp" />
-    <ClCompile Include="src\RGBA.cpp" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="src\Geometry\Geometry.h" />
-    <ClInclude Include="src\Geometry\MapPolygon.h" />
     <ClInclude Include="src\Geometry\Matrix.h" />
     <ClInclude Include="src\Geometry\Polygon.h" />
     <ClInclude Include="src\Geometry\Polyline.h" />
@@ -159,6 +148,16 @@
     <ClInclude Include="src\Map\Map.h" />
     <ClInclude Include="src\Map\MapPoint.h" />
     <ClInclude Include="src\Map\MapPolygon.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Geometry\Matrix.cpp" />
+    <ClCompile Include="src\Geometry\Polygon.cpp" />
+    <ClCompile Include="src\Geometry\Polyline.cpp" />
+    <ClCompile Include="src\Geometry\Punkt2.cpp" />
+    <ClCompile Include="src\Geometry\RGBA.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Map\MapPoint.cpp" />
+    <ClCompile Include="src\Map\MapPolygon.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
